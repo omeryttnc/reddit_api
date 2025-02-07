@@ -21,23 +21,24 @@ class RedditPRAWClient:
         submission.reply(comment_text)
         print(f"✅ Yorum yapıldı: {comment_text}")
     
-    def print_last_post(self, subreddit_name):
+    def print_last_10_post(self, subreddit_name):
         """Verilen subreddit'teki son 1 postu yazdırır."""
         subreddit = self.reddit.subreddit(subreddit_name)
-        for submission in subreddit.new(limit=1):  # Son 1 post
+        posts=[]
+        for submission in subreddit.new(limit=10):  # Son 10 post
             print(f"Başlık: {submission.title}")
             print(f"Link: {submission.url}")
-            print(f"Upvote Sayısı: {submission.id}")
+            print(f"id: {submission.id}")
             print(f"Yorum Sayısı: {submission.num_comments}")
             print("-" * 50)
-            self.comment_on_post(submission.id, "Great post!")
+            posts.append((submission.id, submission.title))
+        return posts
     
-    def return_last_post_id(self, subreddit_name):
+    def return_last_post_id_title(self, subreddit_name):
         """Verilen subreddit'teki son 1 postu döndürür."""
         subreddit = self.reddit.subreddit(subreddit_name)
-        submission_id = subreddit.new(limit=1).__next__().id
-        print(f"Link: {subreddit.new(limit=1).__next__().url}")
-        return submission_id
+        submission = next(subreddit.new(limit=1))
+        return submission.id,submission.title
             
 
 # Test etmek için
@@ -45,10 +46,8 @@ if __name__ == "__main__":
     client = RedditPRAWClient()
     print(f"Bot giriş yaptı: {client.reddit.user.me()}")
 
-# deneme yapmak icin
-    # client.print_last_post("python")
 
-# konu olarak hypnotes yazıldı
-    last_post_id = client.return_last_post_id("hypnosis")
-    client.comment_on_post(last_post_id, "Great post!")
-
+for post_id,post_title in client.print_last_10_post("python"):
+    print(f"Post ID: {post_id}")
+    print(f"Post Başlık: {post_title}")
+    print("-" * 50)
