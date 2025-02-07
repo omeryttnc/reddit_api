@@ -1,0 +1,4 @@
+requests
+praw
+pytest
+python-dotenv
