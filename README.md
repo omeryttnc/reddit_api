@@ -4,6 +4,7 @@ REDDIT_CLIENT_ID=your_client_id
 REDDIT_CLIENT_SECRET=your_client_secret
 REDDIT_USERNAME=your_reddit_username
 REDDIT_PASSWORD=your_reddit_password
+REDDIT_USER_AGENT=MyRedditBot/0.1 by MyRedditBot
 
 📌 1. Reddit API’ye Kayıt Ol ve Uygulama Oluştur
 Öncelikle Reddit’in API hizmetlerini kullanabilmek için Reddit'te bir uygulama oluşturman gerekiyor.
