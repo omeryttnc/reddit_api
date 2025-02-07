@@ -63,8 +63,8 @@ class RedditPRAWClient:
             posts.append((submission.id, submission.title))
         return posts
     
- #aramak istedigimiz anahtar kelimenin gectigi son 10 postu butun communitylerde arar ve bize post id ve title döndürür
-    def return_last_post_in_all_community(self, subreddit_name):
+    #community icindeki son mesajin bize post id ve title döndürür
+    def return_last_post_in_community(self, subreddit_name):
         """Verilen subreddit'teki son 1 postu döndürür."""
         subreddit = self.reddit.subreddit(subreddit_name)
         submission = next(subreddit.new(limit=1))
