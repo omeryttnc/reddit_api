@@ -50,4 +50,5 @@ if __name__ == "__main__":
 for post_id,post_title in client.print_last_10_post("python"):
     print(f"Post ID: {post_id}")
     print(f"Post Başlık: {post_title}")
+    client.comment_on_post(post_id,"commnet test")
     print("-" * 50)
