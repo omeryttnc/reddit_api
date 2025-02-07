@@ -32,3 +32,18 @@ Uygulaman oluşturulduktan sonra, sayfada aşağıdaki bilgileri bulacaksın:
 Client ID → Uygulamanın adının altında yazan alfanumerik kod (Örnek: XxYyZzAAbbCc)
 Client Secret → "secret" yazan uzun bir gizli anahtar (Örnek: a1b2c3d4e5f6g7h8)
 Bu bilgileri bir yere kaydet çünkü birazdan .env dosyasına ekleyeceğiz.
+
+Özellik Açıklama
+submission.title Postun başlığı
+submission.url Postun URL'si
+submission.id Postun benzersiz kimliği (ID)
+submission.selftext Post içeriği (text tabanlı postlarda)
+submission.author Postun yazarı
+submission.subreddit Postun ait olduğu subreddit
+submission.score Postun upvote skoru
+submission.num_comments Postun aldığı yorum sayısı
+submission.created_utc Postun Unix zaman damgası (UTC)
+submission.permalink Reddit içindeki permalink (örn: /r/Python/comments/12345/example_post/)
+submission.thumbnail Eğer varsa postun küçük resmi (örneğin, resim içeriyorsa)
+submission.is_self Post sadece bir text post mu? (True veya False)
+submission.over_18 NSFW (yetişkin içerik) olup olmadığı
