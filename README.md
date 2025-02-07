@@ -10,6 +10,8 @@ REDDIT_USER_AGENT=MyRedditBot/0.1 by MyRedditBot
 Öncelikle Reddit’in API hizmetlerini kullanabilmek için Reddit'te bir uygulama oluşturman gerekiyor.
 
 🔹 Adım 1: Reddit Developer Portal'a Git
+https://www.reddit.com/prefs/apps
+
 Tarayıcında Reddit Apps sayfasını aç.
 Eğer giriş yapmadıysan, Reddit hesabınla giriş yap.
 🔹 Adım 2: Yeni Uygulama (Bot) Oluştur
