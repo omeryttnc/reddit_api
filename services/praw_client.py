@@ -47,23 +47,24 @@ class RedditPRAWClient:
             posts.append((submission.id, submission.title))
         return posts
     
-    #aramasini verdigimiz son 10 postu yazdırır ve bize post id ve title döndürür
-    def print_last_10_post(self, search_query):
+    #aramak istedigimiz anahtar kelimenin gectigi son 10 postu butun communitylerde arar ve bize post id ve title döndürür
+    def return_last_10_post_in_all_community(self, search_query):
         results = self.reddit.subreddit("all").search(search_query, limit=10, sort=RedditSort.NEW)
         posts=[]
         for submission in results:  # Son 10 post
             posts.append((submission.id, submission.title))
         return posts
     
-    #verilen subredditteki son 10 postu yazdırır ve bize post id ve title döndürür
-    def print_last_10_post_in_specific_community(self, subreddit_name,search_query):
+    #aramak istedigimiz anahtar kelimenin gectigi son 10 postu istedigimiz communitylerde arar ve bize post id ve title döndürür
+    def return_last_10_post_in_specificic_community_with_special_key(self, subreddit_name,search_query):
         results = self.reddit.subreddit(subreddit_name).search(search_query, limit=10, sort=RedditSort.NEW)
         posts=[]
         for submission in results:  # Son 10 post
             posts.append((submission.id, submission.title))
         return posts
     
-    def return_last_post_id_title(self, subreddit_name):
+ #aramak istedigimiz anahtar kelimenin gectigi son 10 postu butun communitylerde arar ve bize post id ve title döndürür
+    def return_last_post_in_all_community(self, subreddit_name):
         """Verilen subreddit'teki son 1 postu döndürür."""
         subreddit = self.reddit.subreddit(subreddit_name)
         submission = next(subreddit.new(limit=1))
@@ -75,11 +76,3 @@ if __name__ == "__main__":
     client = RedditPRAWClient()
     print(f"Bot giriş yaptı: {client.reddit.user.me()}")
 
-
-# for post_id,post_title in client.print_last_10_post("python"):
-#     print(f"Post ID: {post_id}")
-#     print(f"Post Başlık: {post_title}")
-#     client.comment_on_post(post_id,"commnet test")
-#     print("-" * 50)
-
-    client.print_last_10_post("Turkish Cat")
