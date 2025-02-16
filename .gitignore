@@ -1,1 +1,41 @@
 .env
+# Python cache ve derleme dosyaları
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+*.pyd
+
+# Sanal ortam (virtualenv)
+venv/
+.env/
+.venv/
+env/
+bin/
+include/
+lib/
+lib64/
+pyvenv.cfg
+
+# Paket bağımlılıkları (örn: pip install ile yüklenenler)
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# IDE ve editör dosyaları
+.vscode/
+.idea/
+*.sublime-workspace
+*.swp
+
+# Günlük (log) dosyaları
+*.log
+logs/
+
+# Jupyter Notebook checkpoint'leri
+.ipynb_checkpoints/
+
+# MacOS sistem dosyaları
+.DS_Store
